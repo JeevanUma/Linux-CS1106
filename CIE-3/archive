@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Define archive name with timestamp
+ARCHIVE_NAME="var_log_backup_$(date +%Y%m%d_%H%M%S).tar"
+
+# Step 1: Create tar archive of /var/log
+echo "Creating tar archive of /var/log..."
+tar -cvf $ARCHIVE_NAME /var/log 2>/dev/null
+
+# Step 2: Compress the tar archive using gzip
+echo "Compressing the archive with gzip..."
+gzip $ARCHIVE_NAME
+
+# Step 3: List the created archive
+echo "Archive created:"
+ls -lh ${ARCHIVE_NAME}.gz
