@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Step 1: Create a 'backup' directory if it doesn't exist
+mkdir -p backup
+
+# Step 2: Copy all .txt files from current directory to 'backup'
+cp *.txt backup/ 2>/dev/null
+
+# Step 3: List contents of 'backup'
+echo "Contents of backup directory:"
+ls -l backup
