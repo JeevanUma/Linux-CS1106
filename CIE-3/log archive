@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Step 1: Create /var/log/backups directory if it doesn't exist
+BACKUP_DIR="/var/log/backups"
+mkdir -p "$BACKUP_DIR"
+
+# Step 2: Define archive name with current date
+DATE=$(date +%Y%m%d)
+ARCHIVE_NAME="backup_${DATE}.tar.gz"
+
+# Compress all .log files in /var/log into the archive
+echo "Compressing .log files into $ARCHIVE_NAME..."
+tar -czf "${BACKUP_DIR}/${ARCHIVE_NAME}" /var/log/*.log 2>/dev/null
+
+# Step 3: List the created archive
+echo "Created archive:"
+ls -lh "${BACKUP_DIR}/${ARCHIVE_NAME}"
