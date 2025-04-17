@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Check if process name is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <process_name>"
+    exit 1
+fi
+
+# Forcefully terminate the process
+pkill -9 "$1"
+
+echo "Process '$1' terminated."
