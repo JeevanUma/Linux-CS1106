@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "==== System Information Report ===="
+
+# 1. Current date
+echo -e "\nCurrent Date and Time:"
+date
+
+# 2. Logged in users
+echo -e "\nLogged In Users:"
+who
+
+# 3. System uptime
+echo -e "\nSystem Uptime:"
+uptime
+
+# 4. Memory usage
+echo -e "\nMemory Usage:"
+free -h
+
+echo -e "\n==== End of Report ===="
